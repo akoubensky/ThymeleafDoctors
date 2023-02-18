@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor</title>
+</head>
+<body>
+    <h1>Doctor</h1>
+    <p style="font: 16pt Arial">
+        <span th:text="${doctor.getJob()}">job</span>
+        <span th:text="${doctor.getName()}">name</span>
+    </p>
+    <p><a th:href="@{/doctors/{id}/edit(id=${doctor.getId()})}">Edit</a></p>
+    <form th:method="POST" th:action="@{/doctors/{id}/delete(id=${doctor.getId()})}" th:object="${doctor}">
+        <input type="submit" value="Delete"/>
+    </form>
+</body>
+</html>

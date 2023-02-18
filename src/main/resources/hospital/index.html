@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital</title>
+    <style>
+        p, div { font: 16pt Arial }
+    </style>
+</head>
+<body>
+    <h1>Hospital</h1>
+    <div th:each="doctor : ${all}">
+        <a th:href="@{doctors/{id}(id=${doctor.getId()})}"
+           th:text="${doctor.getName()}">placeholder</a>
+        <span th:text="${doctor.getJob()}">placeholder</span>
+    </div>
+    <p><a href="/doctors/add">Add new doctor</a></p>
+</body>
+</html>

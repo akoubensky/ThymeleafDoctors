@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New doctor</title>
+</head>
+<body>
+    <h1>Add new doctor</h1>
+    <form th:method="POST" th:action="@{/doctors/{id}(id=${doctor.getId()})}" th:object="${doctor}">
+        <p><label for="name">Name:</label><input type="text" th:field="*{name}" id="name"/> </p>
+        <p><label for="job">Job:</label><input type="text" th:field="*{job}" id="job"/> </p>
+
+        <input type="submit" value="Update"/>
+    </form>
+</body>
+</html>
